@@ -1,30 +1,130 @@
-# HW4_FC
-
-# Determining the Energy Levels of an Electron in a Square Quantum Well (SQW)
+# Square Quantum Well Energy Levels
 
 ## Objective
+Determine all energy levels of an electron in a Square Quantum Well (SQW) for various well widths and visualize the relationship between energy levels and well width dimensions.
 
-Using the program developed in the lab session, determine all the energy levels of the electron in a Square Quantum Well (SQW) for well widths ranging from 5 nm to 100 nm, in increments of 5 nm. Refine the energy discretization where necessary. Construct a graph that shows the variation of the energy levels with the well width (well width on the x-axis, and energy on the y-axis). The 1st, 2nd, 3rd, 4th, etc. levels will be represented by different-colored, monotonically decreasing curves. The higher the energy level, the higher the corresponding curve will start at larger well widths. Present the resulting figure on an A4 sheet and comment on the obtained results.
+## Problem Description
+Using the program developed in the lab session as a foundation, calculate and analyze the energy spectrum of electrons confined in square quantum wells with widths ranging from 5 nm to 100 nm.
 
-## Implementation
+## Requirements
 
-1. Start with the program developed in the lab session, which can solve the Schrödinger equation for a Square Quantum Well (SQW).
-2. Modify the program to accept well widths in the range of 5 nm to 100 nm, with increments of 5 nm.
-3. Refine the discretization of the energy axis, where necessary, to ensure accurate representation of the energy levels.
-4. For each well width, calculate the energy levels of the electron in the SQW.
-5. Construct a graph with the well width on the x-axis and the energy levels on the y-axis.
-6. Represent the 1st, 2nd, 3rd, 4th, etc. energy levels using different-colored, monotonically decreasing curves.
-7. Ensure that the higher energy level curves start at larger well widths, reflecting the fact that higher energy levels require larger well widths to appear.
-8. Present the resulting graph on an A4 sheet and provide a commentary on the obtained results.
+### Simulation Parameters
+- **Well Width Range**: 5 nm to 100 nm
+- **Width Increment**: 5 nm steps
+- **Energy Discretization**: Refined as necessary for accurate results
+- **Output Format**: A4 sheet presentation with comprehensive analysis
 
-## Commentary
+### Computational Tasks
+1. **Energy Level Calculation**
+   - Solve Schrödinger equation for each well width
+   - Determine all bound energy states
+   - Ensure numerical accuracy through appropriate discretization
 
-The resulting graph should show the following:
+2. **Data Collection**
+   - Calculate energy levels for 20 different well widths (5, 10, 15, ..., 100 nm)
+   - Store results for each quantum state (n = 1, 2, 3, 4, ...)
+   - Handle cases where higher states don't exist for narrow wells
 
-1. As the well width increases, the energy levels of the electron decrease, reflecting the inverse relationship between the energy levels and the well width.
-2. The curves for the higher energy levels start at larger well widths, indicating that higher energy levels require larger well widths to appear.
-3. The curves are monotonically decreasing, with the higher energy level curves starting at higher energies and converging towards the lower energy levels as the well width increases.
-4. The spacing between the energy levels decreases as the well width increases, reflecting the fact that the energy level spacing becomes smaller for larger well widths.
-5. The graph provides a visual representation of the relationship between the energy levels and the well width in a Square Quantum Well, which is essential for understanding the behavior of electrons in these confined structures.
+3. **Visualization Requirements**
+   - **X-axis**: Well width (nm)
+   - **Y-axis**: Energy levels (eV)
+   - **Multiple curves**: Each energy level (1st, 2nd, 3rd, etc.) as separate colored lines
+   - **Curve behavior**: Monotonically decreasing functions
+   - **Curve hierarchy**: Higher energy levels start at larger well widths
 
-By analyzing this graph, you can gain insights into the quantization of energy levels in a Square Quantum Well and how the well width affects the energy spectrum of the electron.
+## Implementation Steps
+
+### 1. Program Modification
+- Build upon the lab session's Schrödinger equation solver
+- Implement well width parameterization
+- Add energy level extraction functionality
+
+### 2. Numerical Considerations
+- **Energy discretization**: Refine grid spacing for accurate eigenvalue determination
+- **Convergence criteria**: Ensure numerical stability across different well widths
+- **Boundary conditions**: Proper implementation of infinite potential walls
+
+### 3. Data Processing
+- **State identification**: Correctly label quantum states (n = 1, 2, 3, ...)
+- **Missing states**: Handle cases where higher states don't exist for narrow wells
+- **Data validation**: Verify physical consistency of results
+
+### 4. Graph Construction
+- **Multi-curve plotting**: Different colors for each energy level
+- **Professional formatting**: Suitable for A4 presentation
+- **Clear labeling**: Axes, legend, and curve identification
+
+## Expected Physical Behavior
+
+### Energy-Width Relationship
+The energy levels follow the relationship:
+```
+E_n = (n²π²ℏ²)/(2mL²)
+```
+Where:
+- `n` = quantum number (1, 2, 3, ...)
+- `ℏ` = reduced Planck constant
+- `m` = electron mass
+- `L` = well width
+
+### Key Observations
+1. **Inverse Relationship**: Energy levels decrease as well width increases (∝ 1/L²)
+2. **State Emergence**: Higher energy levels appear only for sufficiently wide wells
+3. **Level Spacing**: Energy spacing decreases with increasing well width
+4. **Monotonic Behavior**: All curves are monotonically decreasing
+
+## Graph Characteristics
+
+### Visual Features
+- **Curve Colors**: Distinct colors for each energy level (n = 1, 2, 3, ...)
+- **Curve Order**: Higher energy curves positioned above lower ones
+- **Starting Points**: Higher energy levels begin at larger well widths
+- **Convergence**: All curves show decreasing energy with increasing width
+
+### Professional Presentation
+- **Format**: Suitable for A4 sheet
+- **Clarity**: Clear legends and axis labels
+- **Completeness**: All calculated energy levels are represented
+
+## Commentary Analysis
+
+### Physical Insights
+1. **Quantum Confinement**: Demonstrates how spatial confinement quantizes energy
+2. **Size Effects**: Shows the relationship between nanostructure dimensions and electronic properties
+3. **State Density**: Illustrates how energy level density increases with well width
+4. **Threshold Behavior**: Higher states require minimum well widths to exist
+
+### Practical Applications
+- **Quantum Dot Design**: Understanding size-dependent electronic properties
+- **Semiconductor Engineering**: Tailoring energy levels through dimensional control
+- **Device Optimization**: Predicting electronic behavior in confined structures
+
+## Success Criteria
+
+### Computational Accuracy
+- Correct implementation of the Schrödinger equation solver
+- Appropriate numerical discretization
+- Physically consistent results
+
+### Visualization Quality
+- Professional graph suitable for A4 presentation
+- Clear representation of all energy levels
+- Proper curve ordering and coloring
+
+### Analysis Depth
+- Comprehensive commentary on physical behavior
+- Explanation of observed trends
+- Connection to quantum mechanical principles
+
+## Technical Specifications
+
+### Units and Constants
+- **Length**: nanometers (nm)
+- **Energy**: electron volts (eV)
+- **Mass**: Electron rest mass (9.109 × 10⁻³¹ kg)
+- **Planck constant**: ℏ = 1.055 × 10⁻³⁴ J·s
+
+### Numerical Parameters
+- **Grid spacing**: Sufficient for convergence
+- **Energy resolution**: Adequate for level identification
+- **Well depth**: Infinite (hard walls)
